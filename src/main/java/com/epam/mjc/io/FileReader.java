@@ -21,7 +21,7 @@ public class FileReader {
     }
 
     public Profile getDataFromFile(File file) throws IOException {
-//        file = new File("C:\\Users\\klubo\\IdeaProjects\\stage1-module6-io-task1\\src\\main\\resources\\Profile.txt");
+        file = new File("Profile.txt");
         Map<String, String> map = new HashMap<>();
 
         try (java.io.FileReader fileReader = new java.io.FileReader(file);){
