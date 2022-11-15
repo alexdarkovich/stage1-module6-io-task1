@@ -4,24 +4,40 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 
 public class FileReader {
+    public static void main(String[] args) {
+
+
+    }
 
 
     public static String returnValueFromMap(String str, Map<String, String> map) {
 
-        Optional<String> result = map.entrySet()
-                .stream()
-                .filter(entry -> str.equals(entry.getKey()))
-                .map(Map.Entry::getValue)
-                .findFirst();
+        Set<Map.Entry<String, String>> entrySet=map.entrySet();
+        String toReturn = null;
 
-            return result.get();
+        for (Map.Entry<String,String> pair : entrySet) {
+            if (str.equals(pair.getKey())) {
+                toReturn = pair.getValue();
+            }
+        }
+        return toReturn;
+
+
+//        Optional<String> result = map.entrySet()
+//                .stream()
+//                .filter(entry -> str.equals(entry.getKey()))
+//                .map(Map.Entry::getValue)
+//                .findFirst();
+//
+//            return result.get();
     }
 
-    public Profile getDataFromFile(File file) throws IOException {
-        file = new File("Profile.txt");
+    public static Profile getDataFromFile(File file) throws IOException {
+        file = new File("src\\main\\resources\\Profile.txt");
         Map<String, String> map = new HashMap<>();
 
         try (java.io.FileReader fileReader = new java.io.FileReader(file);){
@@ -38,7 +54,7 @@ public class FileReader {
         } catch (FileNotFoundException e) {
             System.out.println("file not found");;
         } catch (IOException e) {
-            System.out.println("Problem reading the file " + file.getName());;
+            e.printStackTrace();
         }
 
 
