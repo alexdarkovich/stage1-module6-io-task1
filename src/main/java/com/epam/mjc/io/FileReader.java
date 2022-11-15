@@ -1,17 +1,16 @@
 package com.epam.mjc.io;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
+
 import java.util.Set;
 
 
 public class FileReader {
-    public static void main(String[] args) {
-
-
-    }
 
 
     public static String returnValueFromMap(String str, Map<String, String> map) {
@@ -37,7 +36,7 @@ public class FileReader {
     }
 
     public static Profile getDataFromFile(File file) throws IOException {
-        file = new File("src\\main\\resources\\Profile.txt");
+//        file = new File("src\\main\\resources\\Profile.txt");
         Map<String, String> map = new HashMap<>();
 
         try (java.io.FileReader fileReader = new java.io.FileReader(file);){
