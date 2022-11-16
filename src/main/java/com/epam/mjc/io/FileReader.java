@@ -25,7 +25,7 @@ public class FileReader {
         return toReturn;
     }
 
-    public static Profile getDataFromFile(File file) throws IOException {
+    public Profile getDataFromFile(File file) throws IOException {
         Map<String, String> map = new HashMap<>();
 
         try (java.io.FileReader fileReader = new java.io.FileReader(file);) {
