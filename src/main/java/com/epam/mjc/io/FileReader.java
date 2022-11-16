@@ -25,12 +25,13 @@ public class FileReader {
         return toReturn;
     }
 
-    public Profile getDataFromFile(File file) throws IOException {
+    public Profile getDataFromFile(File file) {
         Map<String, String> map = new HashMap<>();
 
         try (java.io.FileReader fileReader = new java.io.FileReader(file);) {
 
             BufferedReader bufferedReader = new BufferedReader(fileReader);
+
 
             String line = bufferedReader.readLine();
 
