@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
 import java.util.Set;
 
 
@@ -24,15 +23,6 @@ public class FileReader {
             }
         }
         return toReturn;
-
-
-//        Optional<String> result = map.entrySet()
-//                .stream()
-//                .filter(entry -> str.equals(entry.getKey()))
-//                .map(Map.Entry::getValue)
-//                .findFirst();
-//
-//            return result.get();
     }
 
     public static Profile getDataFromFile(File file) throws IOException {
